@@ -76,14 +76,14 @@ void Graph::add_edge(int vertex1, int vertex2, int weight)
   {
     throw invalid_argument("Non-existing weight of edge");
   }
-
-  adjacency_matrix[vertex1][vertex2] = weight;
-  adjacency_matrix[vertex2][vertex1] = weight;
-
-  if (vertex1 == vertex2)
+  
+    if (vertex1 == vertex2)
   {
     throw invalid_argument("Creating an edge between the same vertex");
   }
+
+  adjacency_matrix[vertex1][vertex2] = weight;
+  adjacency_matrix[vertex2][vertex1] = weight;
 }
 
 void Graph::delete_vertex(int vertex)
